@@ -13,6 +13,20 @@ export const decrease = () => {
   };
 };
 
+// thunk function
+
+export const increaseAsync = () => dispatch => {
+  setTimeout(() => {
+    dispatch(increase());
+  }, 1000);
+};
+
+export const decreaseAsync = () => dispatch => {
+  setTimeout(() => {
+    dispatch(decrease());
+  }, 1000);
+};
+
 const initialState = 0;
 
 export default function counter(state = initialState, action) {
